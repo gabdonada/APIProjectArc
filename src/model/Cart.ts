@@ -51,6 +51,12 @@ class CartModel {
     const result = await this.collection.deleteOne({ id: itemId });
     return result.deletedCount ?? 0;
   }
+
+  public async deleteAllCartItems(): Promise<number> {
+    this.ensureCollection();
+    const result = await this.collection.deleteMany({});
+    return result.deletedCount ?? 0;
+  }
 }
 
 export default CartModel;

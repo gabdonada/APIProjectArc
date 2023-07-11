@@ -33,6 +33,15 @@ class Cart {
       return `Failed to delete cart items: ${error}`;
     }
   }
+
+  public async deleteAllCartItems(){
+    try {
+      const deletedCount = await this.cartModel.deleteAllCartItems();
+      return`Deleted ${deletedCount} cart items`;
+    } catch (error) {
+      return `Failed to delete cart items: ${error}`;
+    }
+  }
 }
 
 export default Cart;

@@ -29,11 +29,13 @@ interface ProductsResponse {
 
 //List
 app.get('/', () => {
+
     return "Welcome to our site, run routes to see our products and buy it."
 })
 
 app.get('/all', async () => {
-    return Fetcher('https://dummyjson.com/products/');
+    const response = await Fetcher('https://dummyjson.com/products/');
+    return response.json();
 })
 
 app.get('/category/:cat', async (req: FastifyRequest<{ Params: { cat: string } }>, res: FastifyReply) => {
@@ -48,11 +50,9 @@ app.get('/category/:cat/:brand', async (req: FastifyRequest<{ Params: { cat: str
     const response = await Fetcher('https://dummyjson.com/products/');
     const responseBody = await response.text();
     const data = JSON.parse(responseBody) as ProductsResponse;
-    let filtered = data.products.filter(product => product.category === req.params.cat);
-    filtered = data.products.filter(product => product.brand === req.params.brand);
+    let filtered = data.products.filter(product => (product.category === req.params.cat && product.brand === req.params.brand));
     return filtered
 })
-
 
 //Cart
 app.post('/cart/add/:itemId', async (req: FastifyRequest<{ Params: { itemId: number } }>, res: FastifyReply) => {
@@ -68,6 +68,9 @@ app.post('/cart/add/:itemId', async (req: FastifyRequest<{ Params: { itemId: num
 })
 app.delete('/cart/removeItem/:itemId', async (req: FastifyRequest<{ Params: { itemId: string } }>, res: FastifyReply) => {
     return await cartActions.deleteCartItem(Number(req.params.itemId));
+})
+app.delete('/cart/removeAllItems', async () => {
+    return await cartActions.deleteAllCartItems();
 })
 app.get('/cart/get', async () => {
     return await cartActions.listCartItems();
