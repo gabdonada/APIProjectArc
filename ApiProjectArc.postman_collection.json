@@ -1,0 +1,409 @@
+{
+	"info": {
+		"_postman_id": "7f4df3ad-2f92-4f1c-88d8-ca84652e8a80",
+		"name": "ApiProjectArc",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21574284",
+		"_collection_link": "https://bold-capsule-703343.postman.co/workspace/API-Project-Arc~aca75886-24bc-44a3-bb40-609156c92260/collection/21574284-7f4df3ad-2f92-4f1c-88d8-ca84652e8a80?action=share&creator=21574284&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "Requisições avulsas",
+			"item": [
+				{
+					"name": "Category",
+					"item": [
+						{
+							"name": "Buscar por Categoria",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{ApiURL}}",
+									"host": [
+										"{{ApiURL}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Buscar por Categoria + Marca",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{ApiURL}}/category/smartphones/Apple",
+									"host": [
+										"{{ApiURL}}"
+									],
+									"path": [
+										"category",
+										"smartphones",
+										"Apple"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Carrinho",
+					"item": [
+						{
+							"name": "Adicionar item no carrinho",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{ApiURL}}/cart/add/1",
+									"host": [
+										"{{ApiURL}}"
+									],
+									"path": [
+										"cart",
+										"add",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Deletar item no carrinho",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{ApiURL}}/cart/removeItem/6",
+									"host": [
+										"{{ApiURL}}"
+									],
+									"path": [
+										"cart",
+										"removeItem",
+										"6"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Deletar todos itens do carrinho",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{ApiURL}}/cart/removeAllItems",
+									"host": [
+										"{{ApiURL}}"
+									],
+									"path": [
+										"cart",
+										"removeAllItems"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Comprar itens do carrinho",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{ApiURL}}/cart/buy",
+									"host": [
+										"{{ApiURL}}"
+									],
+									"path": [
+										"cart",
+										"buy"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Buscar produtos do carrinho",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{ApiURL}}/cart/get",
+									"host": [
+										"{{ApiURL}}"
+									],
+									"path": [
+										"cart",
+										"get"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Produtos",
+					"item": [
+						{
+							"name": "Buscar Produtos",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{ApiURL}}",
+									"host": [
+										"{{ApiURL}}"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Tela Inicial",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ApiURL}}",
+							"host": [
+								"{{ApiURL}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Processos",
+			"item": [
+				{
+					"name": "Processo 1",
+					"item": [
+						{
+							"name": "Tela Inicial",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{ApiURL}}",
+									"host": [
+										"{{ApiURL}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Buscar produtos disponiveis",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{ApiURL}}/all",
+									"host": [
+										"{{ApiURL}}"
+									],
+									"path": [
+										"all"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Buscar SEM produtos no carrinho",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{ApiURL}}/cart/get",
+									"host": [
+										"{{ApiURL}}"
+									],
+									"path": [
+										"cart",
+										"get"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Buscar por Categoria \"Smartphones\"",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{ApiURL}}/category/smartphones",
+									"host": [
+										"{{ApiURL}}"
+									],
+									"path": [
+										"category",
+										"smartphones"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Buscar por Categoria \"Smartphone\" + Marca \"Apple\"",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{ApiURL}}/category/smartphones/Apple",
+									"host": [
+										"{{ApiURL}}"
+									],
+									"path": [
+										"category",
+										"smartphones",
+										"Apple"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Adicionar item iPhone 9",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{ApiURL}}/cart/add/1",
+									"host": [
+										"{{ApiURL}}"
+									],
+									"path": [
+										"cart",
+										"add",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Adicionar item iPhone X",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{ApiURL}}/cart/add/2",
+									"host": [
+										"{{ApiURL}}"
+									],
+									"path": [
+										"cart",
+										"add",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Buscar COM produtos no carrinho",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{ApiURL}}/cart/get",
+									"host": [
+										"{{ApiURL}}"
+									],
+									"path": [
+										"cart",
+										"get"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Deletar item no carrinho \"Iphone 9\"",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{ApiURL}}/cart/removeItem/1",
+									"host": [
+										"{{ApiURL}}"
+									],
+									"path": [
+										"cart",
+										"removeItem",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Buscar carrinho com apenas um produto",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{ApiURL}}/cart/get",
+									"host": [
+										"{{ApiURL}}"
+									],
+									"path": [
+										"cart",
+										"get"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Comprar itens do carrinho",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{ApiURL}}/cart/buy",
+									"host": [
+										"{{ApiURL}}"
+									],
+									"path": [
+										"cart",
+										"buy"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Deletar todos itens do carrinho",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{ApiURL}}/cart/removeAllItems",
+									"host": [
+										"{{ApiURL}}"
+									],
+									"path": [
+										"cart",
+										"removeAllItems"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
